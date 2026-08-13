@@ -1,6 +1,6 @@
 {
   "name": "@usespaceui/sounds",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A refined Web Audio engine for UI sound design, featuring 3D spatial panning and tailored acoustic curves.",
   "author": {
     "name": "SpaceUI",

@@ -1,4 +1,4 @@
-import { playByName } from '../index'
+import { play } from '../index'
 import type { SpatialPosition } from '../sounds/types'
 
 const HOVER_GAP_MS = 140
@@ -69,7 +69,7 @@ function listen(root: ParentNode, eventName: string, attr: string, fallbackSound
       const soundRequested = element.getAttribute(attr) || fallbackSound
       const spatial = calculateSpatialPos(element)
 
-      playByName(soundRequested, { spatial })
+      play(soundRequested, { spatial })
     },
     true,
   )

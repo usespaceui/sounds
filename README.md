@@ -170,7 +170,7 @@ Then sprinkle the data attributes on your standard HTML elements anywhere in you
 You can also trigger sounds procedurally and adjust the engine settings globally via direct imports.
 
 ```ts
-import { tap, slide, setVoice, playByName } from '@usespaceui/sounds'
+import { tap, slide, setVoice, play } from '@usespaceui/sounds'
 
 // Set an optional global brand voice seed (alters the tonality of all sounds)
 setVoice('Space UI')
@@ -180,7 +180,7 @@ tap()
 slide('in') // Some triggers accept parameters
 
 // Or dynamically by name (useful for CMS or dynamic mappings)
-playByName('slide-in', { volume: 0.8 })
+play('slide-in', { volume: 0.8 })
 ```
 
 ---
@@ -191,7 +191,7 @@ There are multiple ways to trigger sounds:
 
 1. **Direct method imports**: `import { tap } from "@usespaceui/sounds"`
 2. **React Hook**: `const { tap } = useSpaceSound()`
-3. **Dynamic String**: `playByName("tap")`
+3. **Dynamic String**: `play("tap")`
 4. **HTML attribute**: `<button data-space-click="tap">`
 
 The package includes 24 procedural interactions:
@@ -207,7 +207,7 @@ The package includes 24 procedural interactions:
   - `slide('in' | 'out')`
   - `turn('forward' | 'back')`
 
-_Note: When using `playByName` or HTML attributes, directional triggers use hyphenated strings (e.g. `playByName("slide-in")` or `data-space-click="toggle-on"`)._
+_Note: When using `play` or HTML attributes, directional triggers use hyphenated strings (e.g. `play("slide-in")` or `data-space-click="toggle-on"`)._
 
 ---
 
@@ -216,7 +216,7 @@ _Note: When using `playByName` or HTML attributes, directional triggers use hyph
 - `useSpaceSound()`
   React hook providing all sound trigger methods, properly bound to the engine, as well as state for `volume` and `enabled`.
 
-- `playByName(name: string, options?: PlayOptions)`
+- `play(name: string, options?: PlayOptions)`
   Helper to play any sound dynamically using its string name.
 
 - `setVoice(seed: string | null)`

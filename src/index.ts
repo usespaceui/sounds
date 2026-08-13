@@ -81,7 +81,7 @@ export const slide = (direction: SpatialDirection, options?: PlayOptions) => pla
 /** Directional page travel (forward/back). */
 export const turn = (direction: PageDirection, options?: PlayOptions) => playSpec(turnSpec(direction), options)
 /** Helper lookup map for playing sounds dynamically by string name. */
-export function playByName(name: string, options?: PlayOptions): void {
+export function play(name: string, options?: PlayOptions): void {
   switch (name) {
     case 'tap':
       return playSpec(tapSpec(), options)
