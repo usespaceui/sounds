@@ -1,7 +1,33 @@
 {
   "name": "@usespaceui/sounds",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A refined Web Audio engine for UI sound design, featuring 3D spatial panning and tailored acoustic curves.",
+  "author": {
+    "name": "SpaceUI",
+    "email": "hello@spaceui.one",
+    "url": "https://www.spaceui.one"
+  },
+  "contributors": [
+    {
+      "name": "SpaceUI Team",
+      "email": "hello@spaceui.one",
+      "url": "https://www.spaceui.one"
+    }
+  ],
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/usespaceui"
+  },
+  "license": "MIT",
+  "homepage": "https://sounds.spaceui.one",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/usespaceui/sounds.git"
+  },
+  "bugs": {
+    "url": "https://github.com/usespaceui/sounds/issues",
+    "email": "hello@spaceui.one"
+  },
   "keywords": [
     "react",
     "sounds",
@@ -13,12 +39,16 @@
     "3d",
     "hrtf"
   ],
-  "files": [
-    "dist"
-  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "sideEffects": false,
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "import": {
@@ -50,21 +80,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/usespaceui/sounds.git"
-  },
-  "homepage": "https://sounds.spaceui.one",
-  "bugs": {
-    "url": "https://github.com/usespaceui/sounds/issues"
-  },
   "peerDependencies": {
     "react": ">=18"
-  },
-  "peerDependenciesMeta": {
-    "react": {
-      "optional": true
-    }
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
@@ -72,5 +89,9 @@
     "tsup": "^8.0.2",
     "typescript": "^5.3.3"
   },
-  "license": "MIT"
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  }
 }
