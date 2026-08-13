@@ -1,7 +1,7 @@
 {
   "name": "@usespaceui/sounds",
   "version": "0.1.0",
-  "description": "Procedural Web Audio UI sound engine with Apple device output mastering, 3D HRTF spatial panner, and brand voice seeding",
+  "description": "A refined Web Audio engine for UI sound design, featuring 3D spatial panning and tailored acoustic curves.",
   "keywords": [
     "react",
     "sounds",
