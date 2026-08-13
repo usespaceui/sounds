@@ -1,6 +1,6 @@
 import type { OutputProfile, PlayOptions, SpaceLayer, SpaceSoundSettings, SpaceSoundSpec } from '../sounds/types'
 
-import { getVoice, type Voice } from '../voice/voice'
+import { getVoice, setVoice, type Voice } from '../voice/voice'
 import { createMasteringChain, type MasteringChain } from './mastering'
 import { attachShimmer, renderFm, renderNoise, renderTone } from './renderer'
 import { createSpatialPanner } from './spatial'
@@ -29,6 +29,7 @@ function loadSettings() {
   } catch {
     /* private mode fallback */
   }
+  setVoice(settings.voiceSeed)
   snapshot = { ...settings }
 }
 
@@ -65,6 +66,13 @@ export function setOutputProfile(profile: OutputProfile): void {
   loadSettings()
   settings.outputProfile = profile
   masteringChain = null // reset mastering chain to rebuild EQ
+  saveSettings()
+}
+
+export function setVoiceSeed(seed: string | null): void {
+  loadSettings()
+  settings.voiceSeed = seed
+  setVoice(seed)
   saveSettings()
 }
 

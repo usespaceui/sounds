@@ -7,9 +7,9 @@ import {
   setRespectReducedMotion,
   setVolume,
   subscribe,
+  setVoiceSeed,
 } from '../audio/engine'
 import type { OutputProfile } from '../sounds/types'
-import { setVoice } from '../voice/voice'
 
 let hydrated = false
 
@@ -40,7 +40,7 @@ export function useSpaceSound() {
       setOutputProfile(profile)
     },
     setVoice: (seed: string | null) => {
-      setVoice(seed)
+      setVoiceSeed(seed)
     },
     setRespectReducedMotion,
   }

@@ -223,11 +223,17 @@ _Note: When using `play` or HTML attributes, directional triggers use hyphenated
   Set a deterministic brand voice seed to slightly alter the tonality of all sounds.
 
 - `setOutputProfile(profile: OutputProfile)`
-  Tweak EQ mastering settings based on the output device. Profiles available:
-  - `"auto"`: Default behavior.
-  - `"headphones"`: Optimized for binaural spatial panning and close listening.
-  - `"speakers"`: Boosts presence for small device or laptop speakers.
-  - `"studio"`: Flat, uncolored output for high-fidelity monitors.
+  Adjusts the mastering EQ curve applied to all sounds, optimizing them for different listening environments. Profiles available:
+  - `"auto"`: Detects the device and picks the best EQ curve automatically. _(Default)_
+  - `"headphones"`: Flatter frequency response with a subtle bass lift, optimized for close-ear listening and binaural spatial panning.
+  - `"speakers"`: Compensates for the limited frequency range of typical laptop and monitor speakers by boosting presence and low-end.
+  - `"studio"`: Completely flat, uncolored output designed for high-fidelity studio monitors and mixing environments.
+
+  ```ts
+  import { setOutputProfile } from '@usespaceui/sounds'
+
+  setOutputProfile('headphones')
+  ```
 
 - `setRespectReducedMotion(respect: boolean)`
   If enabled, completely mutes sounds when the user prefers reduced motion (enabled by default).
