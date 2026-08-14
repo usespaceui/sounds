@@ -118,6 +118,24 @@ bind()
 - `data-space-copy` -> Defaults to **`copy`** _(Listens to the native `copy` event)_
 - `data-space-paste` -> Defaults to **`paste`** _(Listens to the native `paste` event)_
 
+#### Global Page Audio (Adding to `<body>`)
+
+Because `bind()` uses delegated event listeners, you can attach attributes directly to your `<body>` (or root layout) to enable app-wide audio interactions:
+
+```html
+<!-- Enables app-wide sound feedback for click, right-click, copy, and paste -->
+<body data-space-click data-space-contextmenu data-space-copy data-space-paste>
+  ...
+</body>
+```
+
+| Attribute | Default Sound | Description |
+| :--- | :--- | :--- |
+| `data-space-click` | `tap` | Plays on general clicks across elements without specific sound overrides. |
+| `data-space-contextmenu` | `open` | Plays on every right-click context menu event anywhere on the page. |
+| `data-space-copy` | `copy` | Plays on any native copy action (via <kbd>Ctrl+C</kbd> / <kbd>Cmd+C</kbd> or context menu). |
+| `data-space-paste` | `paste` | Plays on any native paste action into inputs or editable areas (via <kbd>Ctrl+V</kbd> / <kbd>Cmd+V</kbd>). |
+
 ### 2. React Hook
 
 If you use React, the `useSpaceSound` hook gives you bound functions to trigger sounds and manage engine settings inside your components.
